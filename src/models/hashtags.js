@@ -6,6 +6,7 @@ const hashtagSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    // hashtag may kon se tweet belong karti ha
     tweets: [
       {
         // we perform this just like we perform joining in sequelize
