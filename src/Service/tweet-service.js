@@ -1,8 +1,9 @@
-import { TweetRepository } from "../Repository/index";
+import { TweetRepository, hashtagRepository } from "../Repository/index";
 
 class TweetService {
   constructor() {
     this.tweetRepository = new TweetRepository();
+    this.hashtagRepository = new hashtagRepository();
   }
 
   async create(data) {
@@ -12,6 +13,12 @@ class TweetService {
     console.log(tags);
     const tweet = await this.tweetRepository.create(data);
     // todo create hastag and add here
+
+    /*
+        1-bulk create in mongoose
+        2-filter title of the hashtag on multiple tags
+        3-How to add tweet id inside all the hash tags 
+    */
     return tweet;
   }
 }
